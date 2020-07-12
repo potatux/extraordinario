@@ -1,76 +1,27 @@
 
+#include "Persona.h"
 #include <conio.h>
 #include <iostream>
 #include <string>
-#include "Persona.h"
 using namespace std;
 
-Persona::Persona(){}
-
-
-void Persona::registro(){
-	
-	cout << "ingrese su nombre: ";
-	cin >> nombre;
-	cout << "ingrese su apellido: ";
-	cin >> apellido;
-	cout << "ingrese su edad: ";
-	cin >> edad;
-	cout << "ingrese su peso: ";
-	cin >> peso;
-	cout << "ingrese su altura: ";
-	cin >> altura;
-
-
-	cout << "Registre su domicilio: ";
-	cin.sync();
-	getline(cin >> ws, resi);
-	
-	
-
-	imc = peso / (altura * altura);
-
-	cout << "----Usuario registrado correctamente----" << endl;
+Persona::Persona() {};
+Persona::Persona(char autor[100],char autor_ape[100], char autor_naci[100]) {
+	strcpy_s(this->autor, autor);
+	strcpy_s(this->autor_ape, autor_ape);
+	strcpy_s(this->autor_naci, autor_naci);
+};
+void Persona::registro() {
+	cout << "ingrese el nombre del autor: ";
+	cin >> autor;
+	cout << "ingrese el apeido del autor: ";
+	cin >> autor_ape;
+	cout << "ingrese la nacionalidad del autor: ";
+	cin >> autor_naci;
 }
 
 
-void Persona::mayor() {
-	if (edad <= 17) {
-		cout <<"Edad: " <<edad << " es menor de edad" << endl;
-	}
-	else {
-		cout << "Edad: "<<edad <<  " Es mayor de edad" << endl;
-	}
-
-
-}
-
-void Persona::calculo() {
-	cout <<"Imc: " <<imc<<" ";
-
-	if (imc < 18.5)
-	{
-		cout << "Bajo peso" << endl;
-	}
-	else if (imc > 18.5 and imc <= 24.9)
-	{
-		cout << "Normal" << endl;
-	}
-	else if (imc >= 25 and imc <= 29.9) {
-		cout << "Sobrepeso" << endl;
-	}
-	else {
-		cout << "Obeso" << endl;
-	}
-}
-
-void Persona::toString() {
-	mayor();
-	cout << "Altura: " << altura << endl;
-	cout << "Peso: " << peso << endl;
-	calculo();
-	cout << "Nombre: " << nombre << endl;
-	cout << "Apellido: " << apellido << endl;
-	cout << "Domicilio: " << resi << endl;
-
+void Persona::tostring() {
+	cout << "Autor: " << autor << " " << autor_ape << endl;
+	cout << "Nacionalidad: " << autor_naci << endl;
 }

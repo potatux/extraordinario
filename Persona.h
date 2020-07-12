@@ -1,32 +1,24 @@
 #pragma once
 
 
+
 #include <conio.h>
 #include <iostream>
 #include <string>
-
 using namespace std;
 
 class Persona
-{
-	private:
-
-		int edad;
-		float peso;
-		float altura;
-		float imc;
-		char nombre [120];
-		char apellido [120];
-		string resi;
-
+{	private:
+	char autor[120];
+	char autor_ape[120];
+	char autor_naci[120];
 	public:
+
 		Persona();
-		void calculo();
-		void mayor();
+		Persona(char[], char[], char[]);
+
+
 		void registro();
-		void toString();
-
-
-
+		void tostring();
 };
 
