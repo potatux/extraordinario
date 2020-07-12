@@ -1,24 +1,28 @@
 #pragma once
-
-
-
 #include <conio.h>
 #include <iostream>
 #include <string>
 using namespace std;
 
 class Persona
-{	private:
+{
+private:
+	/*/
 	char autor[120];
 	char autor_ape[120];
+	/*/
 	char autor_naci[120];
-	public:
-
-		Persona();
-		Persona(char[], char[], char[]);
+	string autor;
 
 
-		void registro();
-		void tostring();
+public:
+
+	Persona();
+	Persona(char[]);
+
+
+	void registro();
+	void tostring();
 };
+
 
