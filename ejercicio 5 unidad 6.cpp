@@ -119,6 +119,9 @@ int main()
 			for (int i = op; i <= contador - 1; i++) {
 				if (i < contador - 1) {
 					libros[i] = libros[i + 1];
+					if (i == contador-1) {
+					libros[i] = libros[0];
+					}
 				}
 
 			}
